@@ -1,9 +1,7 @@
 package utils;
 
-import Entidades.Pau;
-import Entidades.Pedra;
-import Entidades.Personagens;
-import Entidades.Porco;
+import Entidades.*;
+import com.sun.tools.jconsole.JConsoleContext;
 
 import java.util.ArrayList;
 import java.util.Collection;
@@ -20,10 +18,10 @@ public class CriarPersonagens {
 
         List<Personagens>alvo = new ArrayList<>();
 
-        Porco porcoComum = new Porco("Porco comun", 60);
+        Porco porcoComum = new Porco("Porco comun", Constantes.PORCO_COMUN);
         alvo.add(porcoComum);
 
-        Porco porcoBigode = new Porco("Porco bigode", 40);
+        Porco porcoBigode = new Porco("Porco bigode", Constantes.PORCO_BIGODE);
         alvo.add(porcoBigode);
 
         Pau pau = new Pau("pau", 0);
@@ -38,5 +36,21 @@ public class CriarPersonagens {
 
     }
 
+    public static List<Personagens> embaralhaBird() {
+        List<Personagens> bird = new ArrayList<>();
+
+        Passarinho birdAmarelo = new Passarinho("Passaro Amarelo", Constantes.PASSARINHO_AMARELO);
+        bird.add(birdAmarelo);
+
+        Passarinho birdVermelho = new Passarinho("Passaro Vermelho", Constantes.PASSARINHO_VERMELHO);
+        bird.add(birdVermelho);
+
+        Passarinho birdBranco = new Passarinho("Passaro Branco", Constantes.PASSARINHO_BRANCO);
+        bird.add(birdBranco);
+
+        Collections.shuffle(bird);
+
+        return bird;
+    }
 
 }
